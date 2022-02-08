@@ -5,7 +5,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-Este projeto visa pratica e refinar os conceitos da linguagem Elixir. 
+Este projeto visa a criação de serviço de envio de email usando os conceitos da linguagem Elixir. 
 
 ![](../header.png)
 
