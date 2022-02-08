@@ -5,7 +5,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
+Este projeto visa pratica e refinar os conceitos da linguagem Elixir. 
 
 ![](../header.png)
 
@@ -18,7 +18,7 @@ De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 
 ## Instalando dependências
 
-Estas serão as dependências instaladas no nosso projeto:
+Estas serão as dependências instaladas no projeto:
 
 - ### [plug_cowboy][plug_cowboy] 
   * Uma implementação do Cowboy para o Elixir.
@@ -58,7 +58,7 @@ Sigamos para o arquivo `lib/mailserver/application.ex`, onde vamos estar configu
 
 
 ## Criando o modulo da rota
-Crie um arquivo chamado `mail_routers.ex` na pasta `lib/mailserver` onde serar definido o modulo responsavel pelas rotas da api
+Crie um arquivo chamado `mail_routers.ex` na pasta `lib/mailserver` onde será definido o modulo responsavel pelas rotas da api
 
 ```sh
  defmodule Mailserver.Router do
@@ -104,15 +104,15 @@ Clone o repositório do projeto:
  $ git clone https://github.com/matias96321/Elixer-Email/tree/main/mailserver
 ```
 
-Configurar servidor MTPS em  `config/config.exs`
+Configurar servidor mtps em  `config/config.exs`
 
-Instalando as dependências: 
+Instalar dependências: 
 
 ```sh
  $ mix deps.get
 ```
 
-Iniciar o projeto: 
+Iniciar projeto: 
 
 ```sh
  $ iex -S mix
@@ -124,18 +124,9 @@ acesse em:  http://localhost:8085/
 
 Matheus Souza Matias – [@Matheus](https://twitter.com/...) – mattheusmattias96@gmail.com
 
-
 Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 
 [https://github.com/matias96321](https://github.com/matias96321)
-
-## Contributing
-
-1. Faça o _fork_ do projeto (<https://github.com/yourname/yourproject/fork>)
-2. Crie uma _branch_ para sua modificação (`git checkout -b feature/fooBar`)
-3. Faça o _commit_ (`git commit -am 'Add some fooBar'`)
-4. _Push_ (`git push origin feature/fooBar`)
-5. Crie um novo _Pull Request_
 
 [npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/datadog-metrics
