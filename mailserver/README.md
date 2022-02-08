@@ -18,7 +18,7 @@ Este projeto visa pratica e refinar os conceitos da linguagem Elixir.
 
 ## Instalando dependências
 
-Estas serão as dependências instaladas do projeto:
+Estas serão as dependências instaladas no projeto:
 
 - ### [plug_cowboy][plug_cowboy] 
   * Uma implementação do Cowboy para o Elixir.
