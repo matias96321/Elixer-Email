@@ -10,6 +10,7 @@ defmodule Mailserver.Application do
     children = [
       # Starts a worker by calling: Mailserver.Worker.start_link(arg)
       # {Mailserver.Worker, arg}
+      Plug.Adapters.Cowboy.child_spec(scheme: :http, plug: Mailserver.Router, options: [port: 8085])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
