@@ -1,11 +1,12 @@
 # Envio de email
+
 > Construindo um serviço de envio de email com Elixir..
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-Este projeto tem como objetivo criar um serviço de envio de email utilizando os conceitos da linguagem Elixir. 
+Este projeto tem como objetivo criar um serviço de envio de email utilizando os conceitos da linguagem Elixir.
 
 ![](../header.png)
 
@@ -20,17 +21,17 @@ Este projeto tem como objetivo criar um serviço de envio de email utilizando os
 
 Estas são as dependências que serão instaladas no projeto:
 
-- ### [plug_cowboy][plug_cowboy] 
-  * Uma implementação do Cowboy para o Elixir.
+- ### [plug_cowboy][plug_cowboy]
+  - Uma implementação do Cowboy para o Elixir.
 - ### [poison][poison]
-  * Biblioteca JSON para o Elixir.
+  - Biblioteca JSON para o Elixir.
 - ### [plug][plug]
-  * Uma especificação para componentes e adaptadores web.
+  - Uma especificação para componentes e adaptadores web.
 - ### [bamboo][bamboo]
-  * Envio de e-mail com Elixir.
+  - Envio de e-mail com Elixir.
 - ### [bamboo_smtp][bamboo_smtp]
-  * Adaptador para usarmos SMTP no bamboo.
-  * 
+  - Adaptador para usarmos SMTP no bamboo.
+
 Abra o arquivo `mix.esx` na raiz do projeto e adicione as seguintes linhas ao campo `deps`:
 
 ```sh
@@ -40,6 +41,7 @@ Abra o arquivo `mix.esx` na raiz do projeto e adicione as seguintes linhas ao ca
   {:bamboo, "~> 2.1.0"},
   {:bamboo_smtp, "~> 4.0.1"}
 ```
+
 Agora, instale as dependências definidas no arquivo `mix.esx` usando o seguinte comando:
 
 ```sh
@@ -47,14 +49,15 @@ $ mix deps.get
 ```
 
 ## Configurando o Servidor HTTP
+
 Sigamos para o arquivo `lib/mailserver/application.ex`, onde configuraremos nosso servidor HTTP adicionando a seguinte linha ao campo `children`:
 
 ```sh
   Plug.Adapters.Cowboy.child_spec(scheme: :http, plug: Mailserver.Router, options: [port: 8085])
- ```
-
+```
 
 ## Criando o Módulo de Rota
+
 Crie um arquivo chamado `mail_routers.ex` na pasta `lib/mailserver`, onde definiremos o módulo responsável pelas rotas da API:
 
 ```sh
@@ -85,23 +88,24 @@ end
 
 end
 ```
+
 Agora, basta iniciar o servidor com o seguinte comando e acessar a rota usando o método GET para verificar o email no Mail Trap:
 
 ```sh
  $ iex -S mix
 ```
 
-
-## Configurando o Projeto 
+## Configurando o Projeto
 
 Clone o repositório do projeto:
 
 ```sh
  $ git clone https://github.com/matias96321/Elixer-Email/tree/main/mailserver
 ```
+
 Configure o servidor SMTP em `config/config.exs`
 
-Instale as dependências: 
+Instale as dependências:
 
 ```sh
  $ mix deps.get
@@ -113,7 +117,7 @@ Inicie o projeto:
  $ iex -S mix
 ```
 
-Acesse em:  http://localhost:8085/
+Acesse em: http://localhost:8085/
 
 ## Meta
 
@@ -135,4 +139,3 @@ Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 [bamboo]: https://github.com/thoughtbot/bamboo
 [bamboo]: https://github.com/thoughtbot/bamboo
 [bamboo_smtp]: https://github.com/fewlinesco/bamboo_smtp
-
