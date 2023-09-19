@@ -1,24 +1,24 @@
 # Envio de email
-> Criando serviço de envio de email com elixir.
+> Construindo um serviço de envio de email com Elixir..
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-Este projeto visa a criação de serviço de envio de email usando os conceitos da linguagem Elixir. 
+Este projeto tem como objetivo criar um serviço de envio de email utilizando os conceitos da linguagem Elixir. 
 
 ![](../header.png)
 
-## Criando o projeto
+## Criando o Projeto
 
 ```sh
  $ mix new mailserver --sup
  $ CD mailserver
 ```
 
-## Instalando dependências
+## Instalando Dependências
 
-Estas serão as dependências instaladas no projeto:
+Estas são as dependências que serão instaladas no projeto:
 
 - ### [plug_cowboy][plug_cowboy] 
   * Uma implementação do Cowboy para o Elixir.
@@ -30,8 +30,8 @@ Estas serão as dependências instaladas no projeto:
   * Envio de e-mail com Elixir.
 - ### [bamboo_smtp][bamboo_smtp]
   * Adaptador para usarmos SMTP no bamboo.
-
-Abrindo o arquivo `mix.esx`, na raiz do projeto, adicionaremos as seguintes linhas no campo `deps`:
+  * 
+Abra o arquivo `mix.esx` na raiz do projeto e adicione as seguintes linhas ao campo `deps`:
 
 ```sh
   {:plug, "~> 1.5"},
@@ -40,25 +40,22 @@ Abrindo o arquivo `mix.esx`, na raiz do projeto, adicionaremos as seguintes linh
   {:bamboo, "~> 2.1.0"},
   {:bamboo_smtp, "~> 4.0.1"}
 ```
-
-Agora instalaremos as dependências definidas no arquivo `mix.esx` usando o comando:
+Agora, instale as dependências definidas no arquivo `mix.esx` usando o seguinte comando:
 
 ```sh
 $ mix deps.get
 ```
 
-
-## Configurando o servidor HTTP
-
-Sigamos para o arquivo `lib/mailserver/application.ex`, onde vamos estar configurando o nosso servidor HTTP, adiconando a seguinte linha no campo `children`:
+## Configurando o Servidor HTTP
+Sigamos para o arquivo `lib/mailserver/application.ex`, onde configuraremos nosso servidor HTTP adicionando a seguinte linha ao campo `children`:
 
 ```sh
   Plug.Adapters.Cowboy.child_spec(scheme: :http, plug: Mailserver.Router, options: [port: 8085])
  ```
 
 
-## Criando o modulo da rota
-Crie um arquivo chamado `mail_routers.ex` na pasta `lib/mailserver` onde será definido o modulo responsavel pelas rotas da api
+## Criando o Módulo de Rota
+Crie um arquivo chamado `mail_routers.ex` na pasta `lib/mailserver`, onde definiremos o módulo responsável pelas rotas da API:
 
 ```sh
  defmodule Mailserver.Router do
@@ -88,37 +85,35 @@ end
 
 end
 ```
-
-Agora só basta iniciar o servidor com o comando e chamando a rota com o metodo GET e verificar o email do Mail Trap:
+Agora, basta iniciar o servidor com o seguinte comando e acessar a rota usando o método GET para verificar o email no Mail Trap:
 
 ```sh
  $ iex -S mix
 ```
 
 
-## Instalando o projeto 
+## Configurando o Projeto 
 
 Clone o repositório do projeto:
 
 ```sh
  $ git clone https://github.com/matias96321/Elixer-Email/tree/main/mailserver
 ```
+Configure o servidor SMTP em `config/config.exs`
 
-Configurar servidor mtps em  `config/config.exs`
-
-Instalar dependências: 
+Instale as dependências: 
 
 ```sh
  $ mix deps.get
 ```
 
-Iniciar projeto: 
+Inicie o projeto:
 
 ```sh
  $ iex -S mix
 ```
 
-acesse em:  http://localhost:8085/
+Acesse em:  http://localhost:8085/
 
 ## Meta
 
